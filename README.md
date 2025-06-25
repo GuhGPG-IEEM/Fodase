@@ -14,8 +14,8 @@ O site permite que administradores gerenciem o catálogo de produtos e que clien
 
 Este projeto foi desenvolvido em dupla por:
 
-* **[SEU NOME AQUI]**
-* **Parceiro de Programação (IA do Google)**
+* **Gustavo Henrique - 10**
+* **Pedro Rangel - 18**
 
 ---
 
@@ -44,6 +44,7 @@ Este projeto foi desenvolvido em dupla por:
 * **bcrypt.js:** Biblioteca para criptografia (hashing) de senhas.
 * **jsonwebtoken:** Biblioteca para criação e verificação de tokens de autenticação (JWT).
 * **CORS:** Middleware para permitir a comunicação entre o front-end e o back-end.
+* **Node.com:** Wow texto generico
 
 ---
 
@@ -56,3 +57,5 @@ Este projeto foi desenvolvido em dupla por:
 git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
 cd NOME_DO_REPOSITORIO
 ```
+
+
