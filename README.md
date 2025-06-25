@@ -1,6 +1,6 @@
 # GPU Store - E-commerce Simples Full-Stack
 
-![Demonstração da GPU Store](https://i.imgur.com/b54c8Jd.png)
+![Demonstração da GPU Store](https://imgur.com/a/SCCloAG)
 
 ## 📖 Descrição do Projeto
 
