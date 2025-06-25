@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPU Store - A sua Loja de Hardware</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">GPU Store 🚀</a>
+            <div class="navbar-session" id="user-session"></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="admin-form-container" class="form-container">
+            <h2>Cadastrar Novo Produto</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Nome da Placa" required>
+                <input type="text" id="product-desc" placeholder="Descrição">
+                <input type="number" step="0.01" id="product-price" placeholder="Preço (ex: 4500.00)">
+                <input type="text" id="product-image" placeholder="URL da Imagem">
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+        <main>
+            <h2>Nosso Catálogo</h2>
+            <div id="product-list" class="product-grid"></div>
+        </main>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Seu Carrinho de Compras</h2>
+            <div id="cart-items"></div>
+            <div id="cart-summary" class="cart-summary">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="summary-subtotal">R$ 0,00</span>
+                </div>
+                <div class="summary-line">
+                    <label for="warranty-select">Garantia Estendida:</label>
+                    <select id="warranty-select">
+                        <option value="0">Sem Garantia</option>
+                        <option value="15">3 meses (+ R$ 15,00)</option>
+                        <option value="25">6 meses (+ R$ 25,00)</option>
+                        <option value="35">12 meses (+ R$ 35,00)</option>
+                    </select>
+                </div>
+                <div class="summary-line">
+                    <span>Frete Fixo:</span>
+                    <span id="summary-shipping">R$ 12,00</span>
+                </div>
+                <hr>
+                <div class="summary-line total">
+                    <span>TOTAL:</span>
+                    <span id="summary-total">R$ 12,00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-fab" class="chat-fab">💬</div>
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <h3>GPU Store Bot</h3>
+            <span id="close-chat">&times;</span>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="chat-input" placeholder="Pergunte sobre um produto..." autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

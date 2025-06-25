@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - GPU Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">GPU Store 🚀</a>
+        </div>
+    </nav>
+    <div class="container">
+        <main>
+            <section class="form-container" style="max-width: 500px; margin: 40px auto;">
+                <h2>Crie sua Conta</h2>
+                <form id="registro-form">
+                    <div class="form-group" style="display: block; margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+                        <input type="email" id="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <div class="form-group" style="display: block; margin-bottom: 15px;">
+                        <label for="senha" style="display: block; margin-bottom: 5px; font-weight: bold;">Senha:</label>
+                        <input type="password" id="senha" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <div class="form-group" style="display: block; margin-bottom: 15px;">
+                        <label for="confirmar-senha" style="display: block; margin-bottom: 5px; font-weight: bold;">Confirmar Senha:</label>
+                        <input type="password" id="confirmar-senha" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <button type="submit" style="width: 100%; background-color: #0052cc; color: white;">Registrar</button>
+                    <p id="message" style="text-align: center; margin-top: 10px;"></p>
+                </form>
+                 <p style="text-align: center; margin-top: 20px;">
+                    Já tem uma conta? <a href="login.html">Faça o login aqui</a>.
+                </p>
+            </section>
+        </main>
+    </div>
+    
+    <div id="chat-fab" class="chat-fab">💬</div>
+    <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+            <h3>GPU Store Bot</h3>
+            <span id="close-chat">&times;</span>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" id="chat-input" placeholder="Pergunte sobre um produto..." autocomplete="off">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
