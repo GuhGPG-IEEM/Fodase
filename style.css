@@ -1,0 +1,206 @@
+/* --- TEMAS E VARIÁVEIS GLOBAIS --- */
+:root {
+    --primary-color: #00BFFF;
+    --text-on-primary: #121212;
+
+    /* TEMA ESCURO (PADRÃO) */
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --dark-text-primary: #FFFFFF;
+    --dark-text-secondary: #b3b3b3;
+    --dark-border: #2a2a2a;
+
+    /* TEMA CLARO */
+    --light-bg: #f0f8ff; /* Fundo: Azul Alice, um azul muito pálido */
+    --light-surface: #ffffff; /* Superfícies: Branco, para contraste */
+    --light-text-primary: #2c3e50; /* Texto Principal: Cinza-azulado escuro */
+    --light-text-secondary: #5d6d7e; /* Texto Secundário: Cinza-azulado médio */
+    --light-border: #dde2e7; /* Bordas: Cinza claro azulado */
+}
+
+body {
+    --bg-color: var(--dark-bg);
+    --surface-color: var(--dark-surface);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --border-color: var(--dark-border);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+    --bg-color: var(--light-bg);
+    --surface-color: var(--light-surface);
+    --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text-secondary);
+    --border-color: var(--light-border);
+}
+
+
+/* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+a { color: var(--primary-color); text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+
+/* --- LAYOUT PRINCIPAL COM GRID --- */
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL DE NAVEGAÇÃO --- */
+.sidebar-nav {
+    grid-column: 1 / 2;
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+}
+.sidebar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.main-nav-links ul li { margin-bottom: 0.5rem; }
+.main-nav-links ul li a { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; color: var(--text-secondary); font-weight: 500; border-radius: 8px; transition: background-color 0.2s, color 0.2s; }
+.main-nav-links ul li a:hover, .main-nav-links ul li a.active { background-color: var(--primary-color); color: var(--text-on-primary); }
+.dropdown-menu { display: none; padding-left: 1rem; margin-top: 0.5rem; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li a { font-size: 0.9rem; }
+
+/* --- CONTAINER DO CONTEÚDO PRINCIPAL --- */
+.main-content-wrapper {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+.main-content-wrapper main { flex-grow: 1; }
+
+/* --- CABEÇALHO SUPERIOR --- */
+.main-header {
+    background-color: var(--surface-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 998;
+}
+.main-header .container { display: flex; justify-content: space-between; align-items: center; }
+.header-icons { display: flex; align-items: center; gap: 20px; }
+
+/* Barra de Busca */
+.search-bar { flex-grow: 1; max-width: 600px; margin: 0 2rem; display: flex; align-items: center; border: 1px solid var(--border-color); border-radius: 50px; background-color: var(--bg-color); overflow: hidden; transition: all 0.3s ease; }
+.search-bar:focus-within { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2); }
+.search-bar input { width: 100%; padding: 10px 20px; border: none; outline: none; background-color: transparent; color: var(--text-primary); font-size: 1rem; }
+.search-bar input::placeholder { color: var(--text-secondary); }
+.search-bar button { padding: 10px 20px; border: none; background-color: var(--primary-color); color: var(--text-on-primary); cursor: pointer; font-size: 1rem; border-radius: 0; }
+
+/* Botão de Tema */
+#theme-toggle-btn { background: none; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer; transition: color 0.3s; }
+#theme-toggle-btn:hover { color: var(--primary-color); }
+
+/* --- BOTÕES GLOBAIS --- */
+.btn-primary, .btn-secondary { display: inline-block; padding: 10px 20px; border-radius: 5px; font-weight: 600; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+.btn-primary { background-color: var(--primary-color); color: var(--text-on-primary); border: none; }
+.btn-primary:hover { filter: brightness(1.2); }
+.btn-secondary { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
+.btn-secondary:hover { background-color: var(--primary-color); color: var(--text-on-primary); }
+
+.cart-icon { position: relative; font-size: 1.5rem; color: var(--text-secondary); }
+.cart-count { position: absolute; top: -5px; right: -10px; background-color: red; color: white; border-radius: 50%; width: 20px; height: 20px; font-size: 0.8rem; display: flex; justify-content: center; align-items: center; }
+
+/* --- ESTILOS DE COMPONENTES E PÁGINAS --- */
+/* Gerais */
+.page-content { padding: 2rem 0; }
+.page-content h1 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-primary); }
+
+/* Card de Produto */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.product-card { background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; text-align: center; padding: 1.5rem; transition: all 0.3s ease; }
+.product-card:hover { transform: translateY(-10px); border-color: var(--primary-color); }
+
+/* Página do Carrinho */
+.cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+.cart-item { background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; gap: 1.5rem; }
+.order-summary { background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 10px; height: fit-content; position: sticky; top: 100px; }
+
+/* Página de Perfil */
+.profile-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; align-items: flex-start; }
+.profile-nav { background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 1rem; border-radius: 10px; }
+.profile-content { background-color: var(--surface-color); border: 1px solid var(--border-color); padding: 2rem; border-radius: 10px; }
+.profile-section { background-color: var(--bg-color); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--surface-color); }
+.address-card { background-color: var(--surface-color); padding: 1rem; border-radius: 5px; border-left: 3px solid var(--primary-color); }
+.delete-address-btn { background: none; border: 1px solid #ff4d4d; color: #ff4d4d; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-top: 0.5rem; transition: all 0.3s ease; }
+.delete-address-btn:hover { background-color: #ff4d4d; color: var(--text-primary); }
+.address-form .form-row { display: flex; gap: 1rem; width: 100%; }
+.address-form .form-group.half { width: 50%; }
+.order-card { background-color: var(--bg-color); border: 1px solid var(--surface-color); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+.order-summary-header { background-color: var(--surface-color); padding: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.9rem; }
+.order-items-container { padding: 1rem; }
+.order-item-detail { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--surface-color); }
+.order-item-detail:last-child { border-bottom: none; }
+.order-item-detail img { width: 60px; height: 60px; object-fit: cover; border-radius: 5px; }
+
+/* Rodapé */
+.main-footer { background-color: var(--surface-color); border-top: 1px solid var(--border-color); padding: 1.5rem 0; grid-column: 1 / -1; /* Ocupa toda a largura do grid */ }
+.main-footer .container { text-align: center; color: var(--text-secondary); }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .page-wrapper { grid-template-columns: 1fr; }
+    .sidebar-nav { display: none; }
+    .main-content-wrapper { grid-column: 1 / -1; }
+    .main-header .container { max-width: 100%; }
+}
+@media (max-width: 768px) {
+    .cart-layout, .profile-layout { grid-template-columns: 1fr; }
+}
+/* --- ESTILOS ESPECÍFICOS PARA O CABEÇALHO SIMPLIFICADO (LOGIN, SUCESSO) --- */
+.main-header.simplified-header .container {
+    justify-content: center; /* Centraliza o logo */
+}
+
+.main-header.simplified-header .search-bar {
+    display: none; /* Esconde a barra de busca */
+}
+
+.main-header.simplified-header .header-icons {
+    position: absolute; /* Permite posicionar o botão de tema livremente */
+    right: 15px; /* Alinha o botão de tema à direita */
+}
+ 
+/* --- ESTILO DO INDICADOR DE CARREGAMENTO (SPINNER) --- */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    min-height: 200px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

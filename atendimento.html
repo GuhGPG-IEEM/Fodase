@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento - Tech Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <aside class="sidebar-nav">
+            <a href="index.html" class="sidebar-logo">TECH STORE</a>
+            <nav class="main-nav-links">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Categorias <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="atendimento.html">Atendimento</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content-wrapper">
+            <header class="main-header">
+                <div class="container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="O que você está procurando?">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <button id="theme-toggle-btn" title="Mudar tema"><i class="fas fa-moon"></i></button>
+                        <div class="user-auth"><a href="login.html">Cadastre-se</a><span>|</span><a href="login.html">Conecte-se</a></div>
+                        <div class="user-profile-container" style="display: none; align-items: center; gap: 15px;"></div>
+                        <a href="carrinho.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="container page-content">
+                    <h1>Atendimento ao Cliente</h1>
+                    <div class="atendimento-layout">
+                        <section class="faq-section">
+                            <h2>Perguntas Frequentes</h2>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Quais são as formas de pagamento aceitas?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Aceitamos as principais bandeiras de cartão de crédito (Visa, MasterCard, Amex), boleto bancário e PIX. O pagamento via PIX oferece 10% de desconto.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Como posso rastrear meu pedido?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Assim que seu pedido for despachado, você receberá um e-mail com o código de rastreamento e o link da transportadora. Você também pode acessar a seção "Meus Pedidos" em seu perfil.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Qual é a política de devolução?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Você pode solicitar a devolução de um produto em até 7 dias corridos após o recebimento, desde que o produto esteja em sua embalagem original e sem sinais de uso. Entre em contato conosco para iniciar o processo.</p>
+                                </div>
+                            </div>
+                        </section>
+            
+                        <section class="contact-form-section">
+                            <h2>Envie uma Mensagem</h2>
+                            <form class="contact-form">
+                                <div class="form-group"><label for="contactName">Nome</label><input type="text" id="contactName" required></div>
+                                <div class="form-group"><label for="contactEmail">E-mail</label><input type="email" id="contactEmail" required></div>
+                                <div class="form-group"><label for="contactSubject">Assunto</label><input type="text" id="contactSubject" required></div>
+                                <div class="form-group"><label for="contactMessage">Mensagem</label><textarea id="contactMessage" rows="6" required></textarea></div>
+                                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+             <footer class="main-footer">
+                <div class="container"><p>&copy; 2025 Tech Store - Todos os direitos reservados.</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

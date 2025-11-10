@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Tech Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <aside class="sidebar-nav">
+            <a href="index.html" class="sidebar-logo">TECH STORE</a>
+            <nav class="main-nav-links">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Categorias <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="atendimento.html">Atendimento</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content-wrapper">
+            <header class="main-header">
+                <div class="container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="O que você está procurando?">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <button id="theme-toggle-btn" title="Mudar tema"><i class="fas fa-moon"></i></button>
+                        <div class="user-auth"><a href="login.html">Cadastre-se</a><span>|</span><a href="login.html">Conecte-se</a></div>
+                        <div class="user-profile-container" style="display: none; align-items: center; gap: 15px;"></div>
+                        <a href="carrinho.html" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="container page-content">
+                    <h1>Minha Conta</h1>
+                    <div class="profile-layout">
+                        <nav class="profile-nav">
+                            <ul>
+                                <li><a href="#" class="profile-tab-link active" data-tab="dados"><i class="fas fa-id-card"></i> Meus Dados</a></li>
+                                <li><a href="#" class="profile-tab-link" data-tab="pedidos"><i class="fas fa-box-open"></i> Meus Pedidos</a></li>
+                                <li><a href="#" id="profile-logout-btn"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                            </ul>
+                        </nav>
+            
+                        <section class="profile-content">
+                            <div id="dados" class="profile-tab-content">
+                                <div class="profile-section"><h2>Dados Pessoais</h2><p><strong>E-mail:</strong> <span id="user-email">Carregando...</span></p></div>
+                                <div class="profile-section"><h2>Meus Endereços</h2><div id="address-list"><p>Carregando endereços...</p></div></div>
+                                <div class="profile-section"><h2>Adicionar Novo Endereço</h2><form id="new-address-form" class="address-form"><div class="form-row"><div class="form-group half"><label for="street">Rua</label><input type="text" id="street" name="street" required></div><div class="form-group half"><label for="number">Número</label><input type="text" id="number" name="number"></div></div><div class="form-row"><div class="form-group half"><label for="neighborhood">Bairro</label><input type="text" id="neighborhood" name="neighborhood" required></div><div class="form-group half"><label for="zip_code">CEP</label><input type="text" id="zip_code" name="zip_code" required></div></div><div class="form-row"><div class="form-group half"><label for="city">Cidade</label><input type="text" id="city" name="city" required></div><div class="form-group half"><label for="state">Estado</label><input type="text" id="state" name="state" required></div></div><button type="submit" class="btn-primary">Salvar Endereço</button></form></div>
+                            </div>
+                            
+                            <div id="pedidos" class="profile-tab-content" style="display: none;">
+                                <div class="profile-section">
+                                    <h2>Histórico de Pedidos</h2>
+                                    <div id="order-history-list"><p>Carregando seus pedidos...</p></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+             <footer class="main-footer">
+                <div class="container"><p>&copy; 2025 Tech Store - Todos os direitos reservados.</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

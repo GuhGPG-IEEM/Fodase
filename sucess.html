@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Realizada! - Tech Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <aside class="sidebar-nav">
+            <a href="index.html" class="sidebar-logo">TECH STORE</a>
+            <nav class="main-nav-links">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Categorias <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="atendimento.html">Atendimento</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content-wrapper">
+            <header class="main-header simplified-header">
+                <div class="container">
+                    <a href="index.html" class="logo">TECH STORE</a>
+                    <div class="header-icons">
+                         <button id="theme-toggle-btn" title="Mudar tema"><i class="fas fa-moon"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="container page-content" style="text-align: center;">
+                    <div class="success-message">
+                        <i class="fas fa-check-circle" style="font-size: 5rem; color: #28a745; margin-bottom: 1rem;"></i>
+                        <h1>Obrigado pela sua compra!</h1>
+                        <p>Seu pedido foi realizado com sucesso.</p>
+                        <p>Você pode acompanhar o status na sua página de perfil em "Meus Pedidos".</p>
+                        <a href="index.html" class="btn-primary" style="margin-top: 2rem;">Voltar à Página Inicial</a>
+                    </div>
+                </div>
+            </main>
+
+             <footer class="main-footer">
+                <div class="container"><p>&copy; 2025 Tech Store - Todos os direitos reservados.</p></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
